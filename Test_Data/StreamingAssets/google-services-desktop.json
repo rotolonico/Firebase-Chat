@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1043417112143",
+    "firebase_url": "https://tutorial-9be3d.firebaseio.com",
+    "project_id": "tutorial-9be3d",
+    "storage_bucket": "tutorial-9be3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043417112143:android:4266eaeb6b5130bb78943a",
+        "android_client_info": {
+          "package_name": "com.rotolonico.tutorial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043417112143-l20obuha98st22dk59kgj7ikqt82fj09.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCffmGY_Evujvm__Zaml3_oXBz13bCE2-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043417112143-l20obuha98st22dk59kgj7ikqt82fj09.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
