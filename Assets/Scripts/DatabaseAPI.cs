@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class DatabaseAPI : MonoBehaviour
 {
     private DatabaseReference reference;
+    private EventHandler<ChildChangedEventArgs> messageListener;
 
     private void Awake()
     {
@@ -29,9 +31,34 @@ public class DatabaseAPI : MonoBehaviour
         void CurrentListener(object o, ChildChangedEventArgs args)
         {
             if (args.DatabaseError != null) fallback(new AggregateException(new Exception(args.DatabaseError.Message)));
-            else callback(StringSerializationAPI.Deserialize(typeof(Message), args.Snapshot.GetRawJsonValue()) as Message);
+            else
+                callback(
+                    StringSerializationAPI.Deserialize(typeof(Message), args.Snapshot.GetRawJsonValue()) as Message);
         }
 
-        reference.Child("messages").ChildAdded += CurrentListener;
+        messageListener = CurrentListener;
+
+        reference.Child("messages").ChildAdded += messageListener;
     }
+
+    public void StopListeningForMessages() => reference.Child("messages").ChildAdded -= messageListener;
+
+    public void PostUser(User user, Action callback, Action<AggregateException> fallback)
+    {
+        var messageJSON = StringSerializationAPI.Serialize(typeof(User), user);
+        reference.Child($"users/{APIHandler.Instance.authAPI.GetUserId()}").SetRawJsonValueAsync(messageJSON)
+            .ContinueWith(task =>
+            {
+                if (task.IsCanceled || task.IsFaulted) fallback(task.Exception);
+                else callback();
+            });
+    }
+
+    public void GetUser(Action<User> callback, Action<AggregateException> fallback) =>
+        reference.Child($"users/{APIHandler.Instance.authAPI.GetUserId()}").GetValueAsync().ContinueWith(
+            task =>
+            {
+                if (task.IsCanceled || task.IsFaulted) fallback(task.Exception);
+                else callback(StringSerializationAPI.Deserialize(typeof(User), task.Result.GetRawJsonValue()) as User);
+            });
 }

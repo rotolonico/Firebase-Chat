@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="756fcd39-d953-4118-ba7d-4183b668a021" name="Default Changelist" comment="" />
+    <list default="true" id="756fcd39-d953-4118-ba7d-4183b668a021" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AuthAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AuthAPI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AuthAPI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AuthAPI.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainSceneHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ChatHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainSceneHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DatabaseAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DatabaseAPI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,24 +21,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainSceneHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StringSerializationAPI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SignInSceneHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DatabaseAPI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AAF8C467-965F-4F9A-8736-18B1F4455498/d6/038b8490/FirebaseAuth.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AAF8C467-965F-4F9A-8736-18B1F4455498/25/030ca290/AuthUtilPINVOKE.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StringSerializationAPI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Message.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/APIHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AuthAPI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/51C7842C-3613-4E17-9A4B-B23E01C71109/e8/ab83463d/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainSceneHandler.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/FirebaseAPI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Message.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ChatHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StringSerializationAPI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseAPI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LoadingSceneHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ChatHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/APIHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AuthAPI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SignInSceneHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseAPI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/User.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainSceneHandler.cs" />
       </list>
     </option>
@@ -65,10 +88,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="15851">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="16241">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15851" />
+      <option name="pid" value="16241" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -85,6 +108,7 @@
       <updated>1591176103634</updated>
       <workItem from="1591176117381" duration="2120000" />
       <workItem from="1591692923962" duration="3797000" />
+      <workItem from="1591953206505" duration="4199000" />
     </task>
     <servers />
   </component>

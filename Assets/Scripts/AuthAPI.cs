@@ -5,9 +5,10 @@ using UnityEngine;
 public class AuthAPI : MonoBehaviour
 {
     private FirebaseAuth auth;
-    
-    private void Awake() => auth = FirebaseAuth.DefaultInstance;
+    private User user;
 
+    private void Awake() => auth = FirebaseAuth.DefaultInstance;
+    
     public void SignUpUser(string email, string password, Action callback, Action<AggregateException> fallback)
     {
         auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
@@ -28,5 +29,9 @@ public class AuthAPI : MonoBehaviour
 
     public void SignOut() => auth.SignOut();
 
-    public bool IsSignedIn() => auth.CurrentUser != null;
+    public string GetUserId() => auth.CurrentUser.UserId;
+
+    public User GetUser() => user;
+    
+    public User SetUser(User user) => this.user = user;
 }

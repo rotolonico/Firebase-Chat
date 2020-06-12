@@ -130,12 +130,15 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="APIHandler.cs" t="Include" />
           <e p="AuthAPI.cs" t="Include" />
-          <e p="ChatHandler.cs" t="Include" />
           <e p="DatabaseAPI.cs" t="Include" />
+          <e p="MainSceneHandler.cs" t="Include" />
           <e p="Message.cs" t="Include" />
           <e p="SignInHandler.cs" t="Include" />
+          <e p="SignInSceneHandler.cs" t="Include" />
           <e p="StringSerializationAPI.cs" t="Include" />
+          <e p="User.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
