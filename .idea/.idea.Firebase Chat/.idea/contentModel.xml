@@ -135,6 +135,7 @@
           <e p="DatabaseAPI.cs" t="Include" />
           <e p="MainSceneHandler.cs" t="Include" />
           <e p="Message.cs" t="Include" />
+          <e p="MessageHandler.cs" t="Include" />
           <e p="SignInHandler.cs" t="Include" />
           <e p="SignInSceneHandler.cs" t="Include" />
           <e p="StringSerializationAPI.cs" t="Include" />

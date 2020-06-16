@@ -33,5 +33,5 @@ public class AuthAPI : MonoBehaviour
 
     public User GetUser() => user;
     
-    public User SetUser(User user) => this.user = user;
+    public void SetUser(User user) => this.user = user;
 }

@@ -8,7 +8,9 @@ using UnityEngine;
 public class DatabaseAPI : MonoBehaviour
 {
     private DatabaseReference reference;
-    private EventHandler<ChildChangedEventArgs> messageListener;
+    private EventHandler<ChildChangedEventArgs> newMessageListener;
+    private EventHandler<ChildChangedEventArgs> editedMessageListener;
+    private EventHandler<ChildChangedEventArgs> deletedMessageListener;
 
     private void Awake()
     {
@@ -26,22 +28,76 @@ public class DatabaseAPI : MonoBehaviour
         });
     }
 
-    public void ListenForMessages(Action<Message> callback, Action<AggregateException> fallback)
+    public void EditMessage(string messageId, string newText, Action callback, Action<AggregateException> fallback)
+    {
+        var messageJSON = StringSerializationAPI.Serialize(typeof(string), newText);
+        reference.Child($"messages/{messageId}/text").SetRawJsonValueAsync(messageJSON).ContinueWith(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted) fallback(task.Exception);
+            else callback();
+        });
+    }
+
+    public void DeleteMessage(string messageId, Action callback, Action<AggregateException> fallback)
+    {
+        reference.Child($"messages/{messageId}").SetRawJsonValueAsync(null).ContinueWith(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted) fallback(task.Exception);
+            else callback();
+        });
+    }
+
+    public void ListenForNewMessages(Action<Message, string> callback, Action<AggregateException> fallback)
     {
         void CurrentListener(object o, ChildChangedEventArgs args)
         {
             if (args.DatabaseError != null) fallback(new AggregateException(new Exception(args.DatabaseError.Message)));
             else
                 callback(
-                    StringSerializationAPI.Deserialize(typeof(Message), args.Snapshot.GetRawJsonValue()) as Message);
+                    StringSerializationAPI.Deserialize(typeof(Message), args.Snapshot.GetRawJsonValue()) as Message,
+                    args.Snapshot.Key);
         }
 
-        messageListener = CurrentListener;
+        newMessageListener = CurrentListener;
 
-        reference.Child("messages").ChildAdded += messageListener;
+        reference.Child("messages").ChildAdded += newMessageListener;
     }
 
-    public void StopListeningForMessages() => reference.Child("messages").ChildAdded -= messageListener;
+    public void ListenForEditedMessages(Action<string, string> callback, Action<AggregateException> fallback)
+    {
+        void CurrentListener(object o, ChildChangedEventArgs args)
+        {
+            if (args.DatabaseError != null) fallback(new AggregateException(new Exception(args.DatabaseError.Message)));
+            else
+                callback(args.Snapshot.Key,
+                    StringSerializationAPI.Deserialize(typeof(string), args.Snapshot.Child("text").GetRawJsonValue()) as
+                        string);
+        }
+
+        editedMessageListener = CurrentListener;
+
+        reference.Child("messages").ChildChanged += editedMessageListener;
+    }
+
+    public void ListenForDeletedMessages(Action<string> callback, Action<AggregateException> fallback)
+    {
+        void CurrentListener(object o, ChildChangedEventArgs args)
+        {
+            if (args.DatabaseError != null) fallback(new AggregateException(new Exception(args.DatabaseError.Message)));
+            else callback(args.Snapshot.Key);
+        }
+
+        deletedMessageListener = CurrentListener;
+
+        reference.Child("messages").ChildRemoved += deletedMessageListener;
+    }
+
+    public void StopListeningForMessages()
+    {
+        reference.Child("messages").ChildAdded -= newMessageListener;
+        reference.Child("messages").ChildChanged -= editedMessageListener;
+        reference.Child("messages").ChildRemoved -= deletedMessageListener;
+    }
 
     public void PostUser(User user, Action callback, Action<AggregateException> fallback)
     {
