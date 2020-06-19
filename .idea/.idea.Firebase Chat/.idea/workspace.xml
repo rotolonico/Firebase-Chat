@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="756fcd39-d953-4118-ba7d-4183b668a021" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Firebase Chat/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Message.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Message.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AuthAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AuthAPI.cs" afterDir="false" />
@@ -108,7 +109,7 @@
       <workItem from="1591176117381" duration="2120000" />
       <workItem from="1591692923962" duration="3797000" />
       <workItem from="1591953206505" duration="4199000" />
-      <workItem from="1592320045979" duration="2876000" />
+      <workItem from="1592320045979" duration="3581000" />
     </task>
     <servers />
   </component>

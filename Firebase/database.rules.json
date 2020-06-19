@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "messages":{
+      ".read": true,
+        "$message_id":{
+          ".write": "(!newData.exists() || newData.child(\"senderUserId\").val() === auth.uid) && (!data.exists() || data.child(\"senderUserId\").val() === auth.uid)"
+        }
+    },
+    "users":{
+      "$uid":{
+        ".read": true,
+    		".write": "auth.uid === $uid"
+      }
+    }
+  }
+}
